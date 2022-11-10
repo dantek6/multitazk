@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import reactLogo from '../assets/react.svg'
-import '../css/App.css'
 
 function Header() {
   return (
