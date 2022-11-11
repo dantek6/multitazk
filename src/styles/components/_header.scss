@@ -1,0 +1,6 @@
+@use '../base/settings' as col;
+
+.navbar_container{
+    background-color: col.$main;
+    color: col.$white;
+}
