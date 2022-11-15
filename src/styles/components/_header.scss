@@ -1,6 +1,19 @@
-@use '../base/settings' as col;
+@use '../abstracts/colors' as col;
+@use '../abstracts/mixins' as mix;
 
-.navbar_container{
+.nav{
     background-color: col.$main;
-    color: col.$white;
+    &__container{
+        width: 90%;
+        margin: 0 auto;
+        height: 100px;
+        @include mix.create_flexbox(space-evenly);
+    }
+    &__item{
+        color: col.$white;
+
+        &:hover{
+            color: col.$yellow;
+        }
+    }
 }

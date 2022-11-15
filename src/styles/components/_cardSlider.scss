@@ -1,0 +1,85 @@
+@use '../abstracts/colors' as col;
+@use '../abstracts/mixins' as mix;
+
+
+.slider{
+    width: 75%;
+    height: 305px;
+    position: relative;
+    @include mix.create_flexbox;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    &-icon.left, &-icon.right {
+        background: col.$black;
+        color: col.$white;
+        border-radius: 100%;
+        position: absolute;
+        padding: 10px;
+        box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 12%);
+        cursor: pointer;
+
+        &:hover{
+            background: col.$yellow;
+            color: col.$black;
+        }
+    }
+    
+    &-icon.left{
+        left: 0;
+    }
+    
+    &-icon.right{
+        right: 0;
+    }
+
+    &__container{
+        width: 100%;
+        height: 100%;
+        white-space: nowrap;
+        overflow-x: scroll;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+        padding: 0 40px 0 40px;
+    
+        &::-webkit-scrollbar{
+            display: none;
+        }
+
+        &__card{
+            width: 320px;
+            height: 300px;
+            background: col.$light;
+            border-radius: 20px;
+            display: inline-block;
+            margin-left: 5px;
+            margin-right: 5px;
+            box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 12%);
+            cursor: pointer;
+
+            &-title, &-description{
+                margin: 5px 0px 5px 10px;
+            }
+            
+            &-title{
+                font-weight: 500;
+                margin-top: 10px;
+            }
+            
+            &-description{
+                opacity: 0.5;
+                font-size: 13px;  
+            }
+            
+            &-image{
+                width: 100%;
+                height: 220px;
+                //background-color: rgb(240 240 240 / 80%);
+                background: col.$grey;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+        }
+    }
+}
+

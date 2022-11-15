@@ -1,0 +1,8 @@
+@use '../abstracts/colors' as col;
+@use '../abstracts/mixins' as mix;
+
+.calendar{
+    width: 75%;
+    position: relative;
+    @include mix.create_flexbox;
+}
