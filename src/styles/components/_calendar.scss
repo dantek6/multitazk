@@ -2,7 +2,16 @@
 @use '../abstracts/mixins' as mix;
 
 .calendar{
-    width: 75%;
+    width: 45%;
     position: relative;
     @include mix.create_flexbox;
 }
+.MuiDayPicker-monthContainer css-6t5f1e-MuiDayPicker-monthContainer {
+    width: 800px;
+}
+
+//PrivatePickersSlideTransition-root
+
+//MuiDayPicker-slideTransition 
+
+//css-sf5t6v-PrivatePickersSlideTransition-root-MuiDayPicker-slideTransition
