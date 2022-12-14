@@ -6,3 +6,18 @@
 @forward './components/header';
 @forward './components/cardSlider';
 @forward './components/calendar';
+@forward './components/doughnutChart';
+
+.col1{
+    width: 70%;
+    float: left;
+}
+
+.col2{
+    width: 30%;
+    float: left;
+}
+
+.box2{
+    margin-top: 80px;
+}

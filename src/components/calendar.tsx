@@ -6,10 +6,10 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
 
 export default function Calendar() {
-    const [value, setValue] = useState<Dayjs | null>(dayjs('2022-04-07'));
+    const [value, setValue] = useState<Dayjs | null>(dayjs());
     return (
         <div className="calendar">
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <LocalizationProvider dateAdapter={AdapterDayjs} >
                 <StaticDatePicker
                     orientation="portrait"
                     openTo="day"

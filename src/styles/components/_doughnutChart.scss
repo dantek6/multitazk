@@ -1,0 +1,15 @@
+@use '../abstracts/mixins' as mix;
+
+.chartBox{
+    box-shadow: 3px 2px 10px 5px #888888;
+    width: 50%;
+    height: 440px;
+    float:left;
+    padding-left: 120px;
+}
+
+.DoughnutChart{
+    width: 80%;
+    position: relative;
+    @include mix.create_flexbox($justify: center);
+}
