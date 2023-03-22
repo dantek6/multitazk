@@ -7,8 +7,8 @@ function Header() {
       <header>
         <nav className="nav">
           <div className="nav__container">
-            <a href="#" className="nav__item">Inicio</a>
-            <a href="#" className="nav__item">Grupos</a>
+            <a href="/" className="nav__item">Inicio</a>
+            <a href="/text-editor" className="nav__item">Grupos</a>
             <a href="#" className="nav__item">Avance Personal</a>
             <a href="#" className="nav__item">Logo</a>
           </div>
