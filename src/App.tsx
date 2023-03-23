@@ -10,9 +10,13 @@ import Avances from "./components/avances";
 import { Route, Routes } from "react-router-dom";
 import JoditEditor from "jodit-react";
 
+// const {Configuration, OpenAIAPI} = require('openai-api');
+
 function App() {
   const editor = useRef(null);
   const [content, setContent] = useState("");
+
+  const [chat, setChat] = useState([])
   
   const [userData, setUserData] = useState({
     labels: ["Completado", "Faltante"],
