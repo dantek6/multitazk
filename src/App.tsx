@@ -6,6 +6,7 @@ import Calendar from "./components/calendar";
 import { UserData } from "./data";
 import DoughnutChart from "./components/doughnutChart";
 import Avances from "./components/avances";
+import ChatTextAI from "./components/chatTextAI";
 
 import { Route, Routes } from "react-router-dom";
 import JoditEditor from "jodit-react";
@@ -16,8 +17,8 @@ function App() {
   const editor = useRef(null);
   const [content, setContent] = useState("");
 
-  const [chat, setChat] = useState([])
-  
+  const [chat, setChat] = useState([]);
+
   const [userData, setUserData] = useState({
     labels: ["Completado", "Faltante"],
     datasets: [
@@ -55,10 +56,11 @@ function App() {
   const TextEditor = () => {
     return (
       <div>
+        <ChatTextAI />
         <JoditEditor
           ref={editor}
           value={content}
-          onBlur={newContent => setContent(newContent)}
+          onBlur={(newContent) => setContent(newContent)}
           onChange={(newContent) => {}}
         />
         {content}

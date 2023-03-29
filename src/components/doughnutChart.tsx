@@ -8,7 +8,7 @@ ChartJS.register({
 });
 
 interface Props {
-    data: ChartData<'pie'>;
+    data: ChartData<'doughnut'>;
 }
 
 export default function DoughnutChart({data}: Props){
