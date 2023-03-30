@@ -5,12 +5,12 @@ const ChatTextAI = () => {
   const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("");
 
-  const HTTP = "http://localhost:8020/";
+  const HTTP = "http://localhost:8080/";
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
     axios
-      .post(`${HTTP}`, { prompt })
+      .post("http://localhost:8080/chat", { prompt })
       .then((res) => setResponse(res.data))
       .catch((error) => console.log(error));
   };
@@ -29,7 +29,7 @@ const ChatTextAI = () => {
         </pre>
       </div>
       <form className="form" onSubmit={handleSubmit}>
-        <textarea
+        {/* <textarea
           // onKeyDown={(e) => {
           //   e.keyCode === 13 && e.shiftKey === false && handleSubmit();
           // }}
@@ -38,10 +38,17 @@ const ChatTextAI = () => {
           className="inputChat"
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
+        /> */}
+        <input 
+          type="text" 
+          value={prompt} 
+          onChange={(e) => setPrompt(e.target.value)}
         />
+        <button 
+          style={{background: "blue"}} 
+          type="submit">Submit</button>
       </form>
-      <p>{ response ? response : "Preguntame lo que sea" }</p>
-      <button></button>
+      <p>{ response }</p>
     </div>
   );
 };
