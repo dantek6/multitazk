@@ -10,7 +10,7 @@ function Header() {
             <a href="/" className="nav__item">Inicio</a>
             <a href="/text-editor" className="nav__item">Grupos</a>
             <a href="#" className="nav__item">Avance Personal</a>
-            <a href="#" className="nav__item">Logo</a>
+            <a href="/login" className="nav__item">Logo</a>
           </div>
         </nav>
       </header>

@@ -7,6 +7,8 @@ import { UserData } from "./data";
 import DoughnutChart from "./components/doughnutChart";
 import Avances from "./components/avances";
 import ChatTextAI from "./components/chatTextAI";
+import Login from "./components/login";
+import Register from "./components/register";
 
 import { Route, Routes } from "react-router-dom";
 import JoditEditor from "jodit-react";
@@ -74,6 +76,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/text-editor" element={<TextEditor />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </div>
   );

@@ -22,7 +22,7 @@ const CardSlider = (props: any) => {
                         return (
                             <div className="slider__container__card">
                                 <div className="slider__container__card-image"></div>
-                                <p className="slider__container__card-title"></p>
+                                <p className="slider__container__card-title">{index}</p>
                                 <p className="slider__container__card-description"></p>
                             </div>
                         )
