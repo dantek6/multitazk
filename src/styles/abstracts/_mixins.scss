@@ -1,6 +1,6 @@
-@mixin create_flexbox($flex:none, $justify:center) {
+@mixin create_flexbox($flexDir:initial, $justify:center) {
     display: flex;
-    //flex-direction: $flex;
+    flex-direction: $flexDir;
     align-items: center;
     justify-content: $justify;
 }

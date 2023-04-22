@@ -3,7 +3,7 @@ import React from 'react';
 
 function Register() {
   return (
-    <div className="register-container">
+    <div className="login__container ">
       <h1>Register</h1>
       <form>
         <label htmlFor="username">Username:</label>

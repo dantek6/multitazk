@@ -7,7 +7,7 @@
         width: 90%;
         margin: 0 auto;
         height: 100px;
-        @include mix.create_flexbox(space-evenly);
+        @include mix.create_flexbox($justify: space-evenly);
     }
     &__item{
         color: col.$white;
