@@ -20,7 +20,7 @@ const CardSlider = (props: any) => {
                 {
                     cards.map((slide, index) => {
                         return (
-                            <div className="slider__container__card">
+                            <div key={index} className="slider__container__card">
                                 <div className="slider__container__card-image"></div>
                                 <p className="slider__container__card-title">{index}</p>
                                 <p className="slider__container__card-description"></p>

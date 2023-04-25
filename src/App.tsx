@@ -9,11 +9,12 @@ import Avances from "./components/avances";
 import ChatTextAI from "./components/chatTextAI";
 import Login from "./components/login";
 import Register from "./components/register";
-//import Quiz from "./components/quiz";
-
+import store from "./app/store";
 import { Route, Routes } from "react-router-dom";
 import JoditEditor from "jodit-react";
 
+import { useSelector } from "react-redux";
+import type { RootState } from "./app/store";
 // const {Configuration, OpenAIAPI} = require('openai-api');
 
 function App() {
@@ -21,6 +22,10 @@ function App() {
   const [content, setContent] = useState("");
 
   const [chat, setChat] = useState([]);
+
+  //Store de Redux:
+  const taskState = useSelector((state: RootState) => state.tasks);
+  //console.log(taskState);
 
   const [userData, setUserData] = useState({
     labels: ["Completado", "Faltante"],
