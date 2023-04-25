@@ -9,7 +9,7 @@ import Avances from "./components/avances";
 import ChatTextAI from "./components/chatTextAI";
 import Login from "./components/login";
 import Register from "./components/register";
-import Quiz from "./components/quiz";
+//import Quiz from "./components/quiz";
 
 import { Route, Routes } from "react-router-dom";
 import JoditEditor from "jodit-react";
@@ -41,10 +41,12 @@ function App() {
     {
       question: 'What is the capital of France?',
       answers: ['Paris', 'Rome', 'Madrid', 'Berlin'],
+      correctAnswer: 0,
     },
     {
       question: 'What is the largest country in the world?',
       answers: ['Russia', 'USA', 'China', 'India'],
+      correctAnswer: 0,
     },
     // más preguntas
   ];
@@ -91,7 +93,7 @@ function App() {
         <Route path="/text-editor" element={<TextEditor />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/quiz" element={<Quiz questions={questions} />} />
+        {/* <Route path="/quiz" element={<Quiz questions={questions} />} /> */}
       </Routes>
     </div>
   );
