@@ -25,7 +25,7 @@ function App() {
 
   //Store de Redux:
   const taskState = useSelector((state: RootState) => state.tasks);
-  //console.log(taskState);
+  console.log(taskState);
 
   const [userData, setUserData] = useState({
     labels: ["Completado", "Faltante"],
