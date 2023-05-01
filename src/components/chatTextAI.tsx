@@ -1,34 +1,39 @@
-import { useState } from "react";
+import { useState, FC } from "react";
 import axios from "axios";
 
-const ChatTextAI = () => {
-  const [prompt, setPrompt] = useState("");
-  const [response, setResponse] = useState("");
+interface ChatTextAIProps {
+  onPromptSubmit: (prompt: string) => void;
+}
 
-  const HTTP = "http://localhost:8080/";
+const ChatTextAI: FC<ChatTextAIProps> = ({ onPromptSubmit }) => {
+  const [prompt, setPrompt] = useState<string>("");
+  const [response, setResponse] = useState<string>("");
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     axios
       .post("http://localhost:8080/chat", { prompt })
-      .then((res) => setResponse(res.data))
+      .then((res) => {
+        const responseData: string = res.data;
+        setResponse(responseData);
+        onPromptSubmit(responseData); // Llamada a la función de devolución de llamada
+      })
       .catch((error) => console.log(error));
   };
 
   return (
     <div>
       <form className="form" onSubmit={handleSubmit}>
-
-        <input 
-          type="text" 
-          value={prompt} 
+        <input
+          type="text"
+          value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
         />
-        <button 
-          style={{background: "blue"}} 
-          type="submit">Submit</button>
+        <button style={{ background: "blue" }} type="submit">
+          Submit
+        </button>
       </form>
-      <p>{ response }</p>
+      {/* <p>{response}</p> */}
     </div>
   );
 };
