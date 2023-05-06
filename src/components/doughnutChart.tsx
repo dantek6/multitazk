@@ -5,20 +5,17 @@ import { Doughnut } from "react-chartjs-2";
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "../app/store";
 import { deleteTask } from "../features/task/taskSlice";
+import {FC} from "react";
 
 ChartJS.register({
   ArcElement,
 });
 
-interface Props {
-  data: ChartData<"doughnut">;
-}
-
-export default function DoughnutChart() {
+const DoughnutChart = () =>{
   const tasks = useSelector((state: RootState) => state.tasks);
   const dispatch = useDispatch();
   
-  const data = {
+  const data: ChartData<"doughnut"> = {
     labels: ["Completado", "Faltante"],
     datasets: [
         {
@@ -40,9 +37,11 @@ export default function DoughnutChart() {
   return (
     <div className="chartBox">
       <div className="DoughnutChart">
-        <Doughnut data={data} />
+        <Doughnut data={data} options={{ maintainAspectRatio: false }}/>
       </div>
       <button onClick={() => handleDelete(tasks[tasks.length-1].id)}>Delete Last</button>
     </div>
   );
 }
+
+export default DoughnutChart;

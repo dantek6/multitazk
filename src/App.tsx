@@ -6,7 +6,8 @@ import Avances from "./components/avances";
 import Login from "./components/login";
 import Register from "./components/register";
 import TextEditor from "./components/textEditor";
-import TaskForm from "./components/taskForm";
+// import TaskForm from "./components/taskForm";
+import Group from "./components/group";
 
 //import store from "./app/store";
 import { Route, Routes } from "react-router-dom";
@@ -16,19 +17,18 @@ import type { RootState } from "./app/store";
 // const {Configuration, OpenAIAPI} = require('openai-api');
 
 function App() {
-
   //Store de Redux:
   // const taskState = useSelector((state: RootState) => state.tasks);
 
   const questions = [
     {
-      question: 'What is the capital of France?',
-      answers: ['Paris', 'Rome', 'Madrid', 'Berlin'],
+      question: "What is the capital of France?",
+      answers: ["Paris", "Rome", "Madrid", "Berlin"],
       correctAnswer: 0,
     },
     {
-      question: 'What is the largest country in the world?',
-      answers: ['Russia', 'USA', 'China', 'India'],
+      question: "What is the largest country in the world?",
+      answers: ["Russia", "USA", "China", "India"],
       correctAnswer: 0,
     },
     // más preguntas
@@ -38,18 +38,16 @@ function App() {
     return (
       <div>
         <div className="col1">
-          <div className="box1">
-            <CardSlider />
-          </div>
-          <div className="box2">
+          <CardSlider />
+          <div className="box">
             <Calendar />
             {/* <DoughnutChart data={userData} /> */}
-            <DoughnutChart/>
+            <DoughnutChart />
           </div>
         </div>
         <div className="col2">
           <Avances />
-          <TaskForm/>
+          {/* <TaskForm /> */}
         </div>
       </div>
     );
@@ -60,6 +58,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/groups" element={<Group />} />
         <Route path="/text-editor" element={<TextEditor />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

@@ -4,3 +4,8 @@
     align-items: center;
     justify-content: $justify;
 }
+
+@mixin set_dimensions($width: auto, $height: auto) {
+    width: $width;
+    height: $height;
+}
