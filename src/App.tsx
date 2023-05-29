@@ -2,7 +2,8 @@ import Header from "./components/header";
 import CardSlider from "./components/cardSlider";
 import Calendar from "./components/calendar";
 import DoughnutChart from "./components/doughnutChart";
-import Avances from "./components/avances";
+// import Avances from "./components/estadisticasPrincipal";
+import EstadisticasPrincipal from "./components/estadisticasPrincipal";
 import Login from "./components/login";
 import Register from "./components/register";
 import TextEditor from "./components/textEditor";
@@ -37,18 +38,14 @@ function App() {
   const Home = () => {
     return (
       <div>
-        <div className="col1">
-          <CardSlider />
-          <div className="box">
-            <Calendar />
-            {/* <DoughnutChart data={userData} /> */}
-            <DoughnutChart />
-          </div>
+        <CardSlider />
+        <div style={{marginTop: 40,}}>
+          <Calendar />
+          {/* <DoughnutChart data={userData} /> */}
+          <DoughnutChart />
+          <EstadisticasPrincipal />
         </div>
-        <div className="col2">
-          <Avances />
-          {/* <TaskForm /> */}
-        </div>
+        {/* <TaskForm /> */}
       </div>
     );
   };

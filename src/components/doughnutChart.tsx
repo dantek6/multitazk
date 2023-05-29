@@ -24,8 +24,8 @@ const DoughnutChart = () =>{
                 tasks.filter((task) => task.completed).length,
                 tasks.filter((task) => !task.completed).length,
             ],
-            backgroundColor: ["#D1261F", "#145285"],
-            hoverBackgroundColor: ["#D1261F", "#145285"],
+            backgroundColor: ["#df3e23", "#285cc4"],
+            hoverBackgroundColor: ["#df3e23", "#285cc4"],
         },
     ],
   }

@@ -19,9 +19,11 @@ const CardSlider = (props: any) => {
             <div id="slider__container" className="slider__container">
                 {
                     cards.map((slide, index) => {
+                        const bookIconNumber = Math.floor(Math.random() * (348 - 342 + 1)) + 342
+                        const iconGroup: string = "images/icon_" + bookIconNumber.toString() + ".png";
                         return (
                             <div key={index} className="slider__container__card">
-                                <div className="slider__container__card-image"></div>
+                                <div className="slider__container__card-image"><img src={iconGroup}/></div>
                                 <p className="slider__container__card-title">{index}</p>
                                 <p className="slider__container__card-description"></p>
                             </div>
@@ -31,7 +33,6 @@ const CardSlider = (props: any) => {
             </div>
             <FaChevronRight size={40} className="slider-icon right" onClick={moveRight}/>
         </div>
-
     )
 }
 

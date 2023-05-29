@@ -6,11 +6,12 @@
     position: relative;
     @include mix.create_flexbox;
     float:left;
-    margin-left: 100px;
+    // margin-left: 20px;
 }
 .css-u0soqy-MuiPickerStaticWrapper-root{
     box-shadow: 3px 2px 10px 5px #888888 !important;
 }
+
 
 .MuiDayPicker-monthContainer css-6t5f1e-MuiDayPicker-monthContainer {
     width: 900px;
@@ -19,6 +20,14 @@
     background-color: col.$main;
     color: col.$white;
     padding: 1rem;
+}
+
+.css-bkrceb-MuiButtonBase-root-MuiPickersDay-root{
+    background-color: col.$light !important;
+}
+
+.MuiCalendarPicker-root{
+    background-color: col.$light;
 }
 
 .css-hlj6pa-MuiDialogActions-root{
