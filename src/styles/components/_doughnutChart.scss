@@ -2,18 +2,15 @@
 @use "../abstracts/colors" as col;
 
 .chartBox {
-  box-shadow: 3px 2px 10px 5px #888888;
   @include mix.set_dimensions(30%, 440px);
   float: left;
-  background-color: col.$main;
-  border-radius: 10px;
+  background-color: col.$white;
 }
 
 .DoughnutChart {
   @include mix.set_dimensions(100%, 100%);
   max-width: 100%;
   position: relative;
-  @include mix.create_flexbox($justify: center);
 
   @media (min-width: 768px) {
     width: 100%;

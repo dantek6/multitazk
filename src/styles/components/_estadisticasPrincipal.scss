@@ -3,13 +3,8 @@
 
 .box {
   @include mix.set_dimensions(30%, 440px);
-  @include mix.create_flexbox();
-  background-color: col.$main;
-  color: col.$white;
-  box-shadow: 3px 2px 10px 5px #888888;
+  background-color: col.$white;
   float: left;
-  margin-left: 100px;
-  border-radius: 10px;
 
   &__content {
     width: 100%;

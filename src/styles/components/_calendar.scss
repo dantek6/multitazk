@@ -2,20 +2,16 @@
 @use '../abstracts/mixins' as mix;
 
 .calendar{
-    width: 30%;
+    width: 15%;
     position: relative;
     @include mix.create_flexbox;
-    float:left;
-    // margin-left: 20px;
+    float: left;
 }
+
 .css-u0soqy-MuiPickerStaticWrapper-root{
-    box-shadow: 3px 2px 10px 5px #888888 !important;
+    width: 320px !important;
 }
 
-
-.MuiDayPicker-monthContainer css-6t5f1e-MuiDayPicker-monthContainer {
-    width: 900px;
-}
 .css-1eurbeq-MuiPickersToolbar-root-MuiDatePickerToolbar-root {
     background-color: col.$main;
     color: col.$white;
@@ -33,9 +29,3 @@
 .css-hlj6pa-MuiDialogActions-root{
    display: none !important; 
 }
-
-//PrivatePickersSlideTransition-root
-
-//MuiDayPicker-slideTransition 
-
-//css-sf5t6v-PrivatePickersSlideTransition-root-MuiDayPicker-slideTransition

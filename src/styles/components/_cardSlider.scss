@@ -46,33 +46,39 @@
         }
 
         &__card{
-            width: 320px;
-            height: 200px;
+            width: 220px;
+            height: auto;
             background: col.$orange;
             border-radius: 20px;
             display: inline-block;
-            margin: 5px 5px;
+            margin: 5px;
             box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 12%);
             cursor: pointer;
 
             &-image{
                 width: 100%;
-                height: 220px;
+                height: 120px;
                 //background-color: rgb(240 240 240 / 80%);
                 // background: col.$mid;
                 border-top-left-radius: 10px;
                 border-top-right-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
                 img{
-                    padding: 30px;
-                    width: 150px;
-                    height: 150px;
+                    padding: 10px;
+                    width: 130px;
+                    height: 130px;
+                    object-fit: cover;
                 }
             }
 
             &-title, &-description{
-                margin: 5px 0px 5px 10px;
-                background-color: aqua;
+                margin: 5px 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
             
             &-title{
