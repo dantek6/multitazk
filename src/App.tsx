@@ -39,7 +39,7 @@ function App() {
     return (
       <div>
         <CardSlider />
-        <div style={{marginTop: 40,}}>
+        <div style={{marginTop: 40, marginLeft: 200}}>
           <Calendar />
           {/* <DoughnutChart data={userData} /> */}
           <DoughnutChart />

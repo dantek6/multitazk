@@ -1,31 +1,37 @@
-@use '../abstracts/colors' as col;
-@use '../abstracts/mixins' as mix;
+@use "../abstracts/colors" as col;
+@use "../abstracts/mixins" as mix;
 
-.calendar{
-    width: 15%;
-    position: relative;
-    @include mix.create_flexbox;
-    float: left;
+.calendar {
+  width: 15%;
+  position: relative;
+  @include mix.create_flexbox;
+  float: left;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    float: none;
+    margin-bottom: 20px;
+  }
 }
 
-.css-u0soqy-MuiPickerStaticWrapper-root{
-    width: 320px !important;
+.css-u0soqy-MuiPickerStaticWrapper-root {
+  width: 320px !important;
 }
 
 .css-1eurbeq-MuiPickersToolbar-root-MuiDatePickerToolbar-root {
-    background-color: col.$main;
-    color: col.$white;
-    padding: 1rem;
+  background-color: col.$main;
+  color: col.$white;
+  padding: 1rem;
 }
 
-.css-bkrceb-MuiButtonBase-root-MuiPickersDay-root{
-    background-color: col.$light !important;
+.css-bkrceb-MuiButtonBase-root-MuiPickersDay-root {
+  background-color: col.$light !important;
 }
 
-.MuiCalendarPicker-root{
-    background-color: col.$light;
+.MuiCalendarPicker-root {
+  background-color: col.$light;
 }
 
-.css-hlj6pa-MuiDialogActions-root{
-   display: none !important; 
+.css-hlj6pa-MuiDialogActions-root {
+  display: none !important;
 }

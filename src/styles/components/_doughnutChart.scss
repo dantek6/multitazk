@@ -5,6 +5,11 @@
   @include mix.set_dimensions(30%, 440px);
   float: left;
   background-color: col.$white;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    float: none;
+  }
 }
 
 .DoughnutChart {

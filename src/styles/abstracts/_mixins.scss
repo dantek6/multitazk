@@ -1,8 +1,8 @@
 @mixin create_flexbox($flexDir:initial, $justify:center) {
     display: flex;
     flex-direction: $flexDir;
-    align-items: center;
     justify-content: $justify;
+    align-items: center;
 }
 
 @mixin set_dimensions($width: auto, $height: auto) {

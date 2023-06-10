@@ -1,96 +1,115 @@
-@use '../abstracts/colors' as col;
-@use '../abstracts/mixins' as mix;
+@use "../abstracts/colors" as col;
+@use "../abstracts/mixins" as mix;
 
+.slider {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  @include mix.create_flexbox;
+  margin: 15px 0 15px 0;
 
-.slider{
+  &-icon.left,
+  &-icon.right {
+    background: col.$black;
+    color: col.$white;
+    border-radius: 100%;
+    position: absolute;
+    padding: 10px;
+    box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 12%);
+    cursor: pointer;
+
+    &:hover {
+      background: col.$yellow;
+      color: col.$black;
+    }
+  }
+
+  &-icon.left {
+    left: 0;
+  }
+
+  &-icon.right {
+    right: 0;
+  }
+
+  &__container {
     width: 100%;
-    height: 200px;
-    position: relative;
-    @include mix.create_flexbox;
-    margin: 15px 0 15px 0;
-
-    &-icon.left, &-icon.right {
-        background: col.$black;
-        color: col.$white;
-        border-radius: 100%;
-        position: absolute;
-        padding: 10px;
-        box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 12%);
-        cursor: pointer;
-
-        &:hover{
-            background: col.$yellow;
-            color: col.$black;
-        }
-    }
+    height: 100%;
+    white-space: nowrap;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    padding: 0 40px 0 40px;
     
-    &-icon.left{
-        left: 0;
-    }
-    
-    &-icon.right{
-        right: 0;
+
+    &::-webkit-scrollbar {
+      display: none;
     }
 
-    &__container{
+    &__card {
+      width: 220px;
+      height: auto;
+      background: col.$orange;
+      border-radius: 20px;
+      // border-top: 1px #000 solid;
+      display: inline-block;
+      margin: 5px;
+      box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 12%);
+      cursor: pointer;
+
+      &-image {
         width: 100%;
-        height: 100%;
-        white-space: nowrap;
-        overflow-x: scroll;
-        scrollbar-width: none;
-        scroll-behavior: smooth;
-        padding: 0 40px 0 40px;
-    
-        &::-webkit-scrollbar{
-            display: none;
+        height: 100px;
+        background-color: col.$mid;
+        //background-color: rgb(240 240 240 / 80%);
+        // background: col.$mid;
+        // border-top-left-radius: 10px;
+        // border-top-right-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          // padding-top: 2px;
+          width: 100%;
+          height: 120px;
+          // object-fit: cover;
         }
+      }
 
-        &__card{
-            width: 220px;
-            height: auto;
-            background: col.$orange;
-            border-radius: 20px;
-            display: inline-block;
-            margin: 5px;
-            box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 12%);
-            cursor: pointer;
+      &-title,
+      &-description {
+        margin: 5px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-            &-image{
-                width: 100%;
-                height: 120px;
-                //background-color: rgb(240 240 240 / 80%);
-                // background: col.$mid;
-                border-top-left-radius: 10px;
-                border-top-right-radius: 10px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+      &-title {
+        font-weight: 500;
+        margin-top: 10px;
+      }
 
-                img{
-                    padding: 10px;
-                    width: 130px;
-                    height: 130px;
-                    object-fit: cover;
-                }
-            }
+      &-description {
+        opacity: 0.5;
+        font-size: 13px;
+      }
 
-            &-title, &-description{
-                margin: 5px 10px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            
-            &-title{
-                font-weight: 500;
-                margin-top: 10px;
-            }
-            
-            &-description{
-                opacity: 0.5;
-                font-size: 13px;  
-            }
+      @media (max-width: 768px) {
+        width: 130px;
+        margin: 5px;
+        font-size: 12px;
+
+        &-image {
+          height: 100px;
+
+          img {
+            padding: 8px;
+            width: 100px;
+            height: 100px;
+          }
         }
+      }
     }
+  }
 }
-

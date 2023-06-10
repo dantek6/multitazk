@@ -19,8 +19,9 @@ const CardSlider = (props: any) => {
             <div id="slider__container" className="slider__container">
                 {
                     cards.map((slide, index) => {
-                        const bookIconNumber = Math.floor(Math.random() * (348 - 342 + 1)) + 342
-                        const iconGroup: string = "images/icon_" + bookIconNumber.toString() + ".png";
+                        const bookIconNumber = Math.floor(Math.random() * 4) + 1;
+                        const iconGroup: string = "svg/group"+ String(bookIconNumber) +".svg";
+                        console.log(iconGroup)
                         return (
                             <div key={index} className="slider__container__card">
                                 <div className="slider__container__card-image"><img src={iconGroup}/></div>
