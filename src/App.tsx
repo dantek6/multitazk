@@ -3,18 +3,18 @@ import CardSlider from "./components/cardSlider";
 import Calendar from "./components/calendar";
 import DoughnutChart from "./components/doughnutChart";
 // import Avances from "./components/estadisticasPrincipal";
-import EstadisticasPrincipal from "./components/estadisticasPrincipal";
-import Login from "./components/login";
-import Register from "./components/register";
 import TextEditor from "./components/textEditor";
-// import TaskForm from "./components/taskForm";
-import Group from "./components/group";
+import EstadisticasPrincipal from "./components/estadisticasPrincipal";
 
-//import store from "./app/store";
+import Login from "./pages/loginPage";
+import Register from "./pages/registerPage";
+import Group from "./pages/groupPage";
+
 import { Route, Routes } from "react-router-dom";
+//import store from "./app/store";
 
-import { useSelector } from "react-redux";
-import type { RootState } from "./app/store";
+// import { useSelector } from "react-redux";
+// import type { RootState } from "./app/store";
 // const {Configuration, OpenAIAPI} = require('openai-api');
 
 function App() {
@@ -38,6 +38,7 @@ function App() {
   const Home = () => {
     return (
       <div>
+        <Header />
         <CardSlider />
         <div style={{marginTop: 40, marginLeft: 200}}>
           <Calendar />
@@ -52,7 +53,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      {/* <Header /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/groups" element={<Group />} />

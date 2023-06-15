@@ -1,10 +1,12 @@
 import ProgressBar from "@ramonak/react-progress-bar";
 import TaskForm from "../components/taskForm";
+import Header from "../components/header";
 
 const Group = () => {
   return (
     <div>
       <div>
+        <Header />
         <ProgressBar
           completed={50}
           bgColor="#7F8DFF"
