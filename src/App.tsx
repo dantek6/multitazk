@@ -9,6 +9,7 @@ import EstadisticasPrincipal from "./components/estadisticasPrincipal";
 import Login from "./pages/loginPage";
 import Register from "./pages/registerPage";
 import Group from "./pages/groupPage";
+import ProtectedRoute from "./pages/protectedRoute";
 
 import { Route, Routes } from "react-router-dom";
 //import store from "./app/store";
@@ -40,7 +41,7 @@ function App() {
       <div>
         <Header />
         <CardSlider />
-        <div style={{marginTop: 40, marginLeft: 200}}>
+        <div style={{ marginTop: 40, marginLeft: 200 }}>
           <Calendar />
           {/* <DoughnutChart data={userData} /> */}
           <DoughnutChart />
@@ -55,11 +56,14 @@ function App() {
     <div className="App">
       {/* <Header /> */}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/groups" element={<Group />} />
-        <Route path="/text-editor" element={<TextEditor />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+
+        <Route element={<ProtectedRoute/>}>
+          <Route path="/" element={<Home />} />
+          <Route path="/groups" element={<Group />} />
+          <Route path="/text-editor" element={<TextEditor />} />
+        </Route>
         {/* <Route path="/quiz" element={<Quiz questions={questions} />} /> */}
       </Routes>
     </div>

@@ -47,8 +47,8 @@
     }
 
     &__card {
-      width: 220px;
-      height: auto;
+      width: 261px;
+      height: 261px;
       background: col.$orange;
       border-radius: 20px;
       // border-top: 1px #000 solid;
@@ -59,7 +59,7 @@
 
       &-image {
         width: 100%;
-        height: 100px;
+        height: 140px;
         background-color: col.$mid;
         //background-color: rgb(240 240 240 / 80%);
         // background: col.$mid;
@@ -79,7 +79,7 @@
 
       &-title,
       &-description {
-        margin: 5px 10px;
+        // margin: 5px 10px;
         display: flex;
         align-items: center;
         justify-content: center;

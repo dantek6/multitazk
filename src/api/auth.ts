@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "./axios";
 
 interface User {
   username: string;
@@ -6,9 +6,12 @@ interface User {
   password: string;
 }
 
-const API = "http://localhost:8080/api";
+// const API = "http://localhost:8080/api";
 
 export const registerRequest = (user: User) =>
-  axios.post(`${API}/register`, user);
+  axios.post(`auth/register`, user);
 
-export const loginRequest = (user: User) => axios.post(`${API}/login`, user);
+export const loginRequest = (user: User) => axios.post(`auth/login`, user);
+
+export const verifyTokenRequest = (token: String) => axios.get(`auth/verifyToken`);
+

@@ -4,7 +4,7 @@ import { useAuth } from "../context/AuthContext";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-interface User {
+type User ={
   username: string;
   email: string;
   password: string;
@@ -18,14 +18,14 @@ function Register() {
   } = useForm<User>();
   const { signup, isAuthenticated, error } = useAuth();
   const navigate = useNavigate();
-
+  
+  const onSubmit = handleSubmit(async (values) => {
+    await signup(values);
+  });
+  
   useEffect(() => {
     if (isAuthenticated) navigate("/");
   }, [isAuthenticated]);
-
-  const onSubmit = handleSubmit(async (values) => {
-    signup(values);
-  });
 
   return (
     <div className="login__container ">
