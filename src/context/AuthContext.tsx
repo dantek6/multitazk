@@ -7,16 +7,7 @@ import {
 } from "react";
 import { registerRequest, loginRequest, verifyTokenRequest } from "../api/auth";
 import Cookies from "js-cookie";
-
-interface User {
-  username: string;
-  email: string;
-  password: string;
-}
-
-interface ErrorData {
-  error: string | string[];
-}
+import { User, ErrorData } from "../components/types/types";
 
 interface AuthContextType {
   signup: (user: User) => Promise<void>;
@@ -24,7 +15,7 @@ interface AuthContextType {
   loading: boolean;
   user: User | null;
   isAuthenticated: boolean;
-  error: ErrorData[];
+  errors: ErrorData[];
 }
 
 export const AuthContext = createContext<AuthContextType | null>(null);
@@ -89,11 +80,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       try {
         const res = await verifyTokenRequest(cookies.token);
         console.log(res.data);
-        if (!res.data){
+        if (!res.data) {
           setIsAuthenticated(false);
           setLoading(false);
           return;
-        } 
+        }
 
         setIsAuthenticated(true);
         setUser(res.data);
