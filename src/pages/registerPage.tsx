@@ -1,19 +1,18 @@
 import { useForm } from "react-hook-form";
-import { registerRequest } from "../api/auth";
 import { useAuth } from "../context/AuthContext";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Message } from "../components/ui/message";
+// import { Message } from "../components/ui/message";
 import { User } from "../components/types/types";
 
 function Register() {
-  const { signup, errors: registerErrors, isAuthenticated } = useAuth();
-
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<User>();
+
+  const { signup, errorsAuth, isAuthenticated } = useAuth();
 
   const navigate = useNavigate();
 
@@ -28,22 +27,22 @@ function Register() {
   return (
     <div className="login__container ">
       <h1>Register</h1>
-      {registerErrors.map((error, i) => (
-        <Message message={error} key={i} />
+      {errorsAuth.map((error, index) => (
+        <p style={{backgroundColor: "red", color: "#fff"}} key={index}>{typeof error === 'string' ? error : error.error}</p>
       ))}
       <form onSubmit={onSubmit}>
         <label htmlFor="username">Username:</label>
         <input type="text" {...register("username", { required: true })} />
         {errors.username && (
-          <p style={{ color: "red" }}>Username is required</p>
+          <p style={{ color: "red" }}>Nombre de usuario es requerido</p>
         )}
         <label htmlFor="email">Email:</label>
         <input type="email" {...register("email", { required: true })} />
-        {errors.email && <p style={{ color: "red" }}>email is required</p>}
+        {errors.email && <p style={{ color: "red" }}>Correo electrónico es requerido</p>}
         <label htmlFor="password">Password:</label>
         <input type="password" {...register("password", { required: true })} />
         {errors.password && (
-          <p style={{ color: "red" }}>password is required</p>
+          <p style={{ color: "red" }}>Contraseña es requerida</p>
         )}
         <button type="submit">Register</button>
       </form>

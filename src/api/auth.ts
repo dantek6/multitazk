@@ -13,5 +13,9 @@ export const registerRequest = (user: User) =>
 
 export const loginRequest = (user: User) => axios.post(`auth/login`, user);
 
-export const verifyTokenRequest = (token: String) => axios.get(`auth/verifyToken`);
+export const verifyTokenRequest = (token: string) => axios.get(`auth/verifyToken`, {
+  headers: {
+    Authorization: `Bearer ${token}`,
+  },
+});
 

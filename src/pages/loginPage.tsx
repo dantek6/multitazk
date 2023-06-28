@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { Message } from "../components/ui/message";
+// import { Message } from "../components/ui/message";
 import { User } from "../components/types/types";
 
 function Login() {
@@ -12,7 +12,7 @@ function Login() {
     formState: { errors },
   } = useForm<User>();
 
-  const { signin, errors: loginErrors, isAuthenticated } = useAuth();
+  const { signin, errorsAuth, isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
   const onSubmit = handleSubmit((data) => {
@@ -31,8 +31,8 @@ function Login() {
 
   return (
     <div className="login__container">
-      {loginErrors.map((error, i) => (
-        <Message message={error} key={i} />
+      {errorsAuth.map((error, index) => (
+        <p style={{backgroundColor: "red"}} key={index}>{typeof error === 'string' ? error : error.error}</p>
       ))}
       <h1>Login</h1>
       <form onSubmit={onSubmit}>
