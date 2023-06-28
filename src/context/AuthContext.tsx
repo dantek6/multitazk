@@ -34,16 +34,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [errorsAuth, setErrorsAuth] = useState<ErrorData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
-  // clear errors after 5 seconds
-  useEffect(() => {
-    if (errorsAuth.length > 0) {
-      const timer = setTimeout(() => {
-        setErrorsAuth([]);
-      }, 5000);
-      return () => clearTimeout(timer);
-    }
-  }, [errorsAuth]);
-
   const signup = async (user: User) => {
     try {
       const res = await registerRequest(user);
@@ -68,22 +58,44 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
+  // clear errors after 5 seconds
+  useEffect(() => {
+    if (errorsAuth.length > 0) {
+      const timer = setTimeout(() => {
+        setErrorsAuth([]);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [errorsAuth]);
+
+  // Verificación de tokens y atuenticación de usuarios
   useEffect(() => {
     async function fetchData() {
       const cookies = Cookies.get();
 
-      if (cookies.token) {
-        try{
-          const res = await verifyTokenRequest(cookies.token);
-          console.log(res);
-          if(!res.data) setIsAuthenticated(false);
-          setIsAuthenticated(true);
-          setUser(res.data);
-        }catch (error){
-          setIsAuthenticated(false);
-          setUser(null);
-        }
+      if (!cookies.token) {
+        setIsAuthenticated(false);
+        setLoading(false);
+        return setUser(null);
       }
+      try {
+        const res = await verifyTokenRequest(cookies.token);
+        console.log(res);
+        if (!res.data){
+          setIsAuthenticated(false);
+          setLoading(false);
+          return;
+        } 
+        
+        setIsAuthenticated(true);
+        setUser(res.data);
+        setLoading(false);
+      } catch (error) {
+        setIsAuthenticated(false);
+        setUser(null);
+        setLoading(false);
+      }
+
     }
     fetchData();
   }, []);
