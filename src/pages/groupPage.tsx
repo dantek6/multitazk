@@ -15,19 +15,36 @@ const Group = () => {
           labelColor="#e80909"
         />
       </div>
-      <div className="col1">
-        <div className="groupBox">
-          <p>
-            <a href="text-editor">Chao</a>
-          </p>
+      <div className="TaskSelection">
+        <div className="TaskSelection__item">
+          <img className="Icon043" src="https://via.placeholder.com/127x133" />
+          <div className="Tarea110Exp">Tarea 1 <br /><br />+10 exp</div>
         </div>
-        <div className="groupBox">
-          <p>Chao</p>
+        <div className="TaskSelection__item">
+          <div className="Tarea410Exp">Tarea 4<br /><br />+10 exp</div>
+          <img className="Icon044" src="https://via.placeholder.com/127x133" />
+        </div>
+        <div className="TaskSelection__item">
+          <div className="Tarea310Exp">Tarea 3 <br /><br />+10 exp</div>
+          <img className="Icon044" src="https://via.placeholder.com/127x133" />
+        </div>
+        <div className="TaskSelection__item">
+          <div className="Tarea210Exp">Tarea 2 <br /><br />+10 exp</div>
+          <img className="Icon044" src="https://via.placeholder.com/127x133" />
+        </div>
+        <div className="TaskSelection__item">
+          <div className="Tarea210Exp">Tarea 2 <br /><br />+10 exp</div>
+          <img className="Icon044" src="https://via.placeholder.com/127x133" />
+        </div>
+        <div className="TaskSelection__item">
+          <img className="Icon043" src="https://via.placeholder.com/127x133" />
+          <div className="Tarea110Exp">Tarea 1 <br /><br />+10 exp</div>
         </div>
       </div>
-      <div className="col2">
+
+      {/* <div className="col2">
         <TaskForm />
-      </div>
+      </div> */}
     </div>
   );
 };
