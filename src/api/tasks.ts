@@ -1,20 +1,14 @@
 import axios from "./axios";
 
 interface Task {
-    title: string;
-    instruction: string;
-    date: Date;
-    groupId: string; // Cambia a ObjectId / string si lo necesitas
-    adminId: string;
-    lengthMin?: number;
-    points?: number;
-    responses: {
-      userId: string;
-      taskResponse: string;
-    }[];
+  title: string;
+  instruction: string;
+  date: Date;
+  lengthMin?: number;
+  points?: number;
   }
 
-export const createTaskRequest = (task: Task) => axios.post("/tasks", task);
+export const createTaskRequest = (groupId: string, task: Task) => axios.post(`/api/groups/${groupId}/tasks`, task);
 export const getTasksRequest = () => axios.get("/tasks");
 export const getTaskRequest = (taskId: string) => axios.get(`/tasks/${taskId}`);
 export const deleteTaskRequest = (taskId: string) => axios.delete(`/tasks/${taskId}`);

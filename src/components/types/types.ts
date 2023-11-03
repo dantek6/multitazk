@@ -39,16 +39,11 @@ export type getOneTask = {
 };
 
 export type Task = {
-  _id: string;
+
   title: string;
   instruction: string;
   date: Date;
-  groupId: string;
-  adminId: string;
   lengthMin?: number;
   points?: number;
-  responses: Array<{
-    userId: string;
-    taskResponse: string;
-  }>;
+
 };

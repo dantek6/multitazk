@@ -3,7 +3,7 @@ import CardSlider from "./components/cardSlider";
 import Calendar from "./components/calendar";
 import DoughnutChart from "./components/doughnutChart";
 // import Avances from "./components/estadisticasPrincipal";
-import TextEditor from "./components/textEditor";
+// import TextEditor from "./components/textEditor";
 import EstadisticasPrincipal from "./components/estadisticasPrincipal";
 
 import Login from "./pages/loginPage";
@@ -12,6 +12,7 @@ import Group from "./pages/groupPage";
 import GroupFormPage from "./pages/createGroupPage";
 import ProtectedRoute from "./pages/protectedRoute";
 import Task from "./pages/taskPage";
+import TaskForm from "./pages/taskFormPage";
 
 import { Route, Routes } from "react-router-dom";
 //import store from "./app/store";
@@ -67,7 +68,7 @@ function App() {
           <Route path="/groups/:_id" element={<Group />} />
           <Route path="/tasks/:_id" element={<Task />} />
           {/* <Route path="/groups/:_id" element={<Group />} /> */}
-          <Route path="/text-editor" element={<TextEditor />} />
+          <Route path="/groups/:_id/tasks" element={<TaskForm />} />
           <Route path="/create-group" element={<GroupFormPage />} />
         </Route>
         {/* <Route path="/quiz" element={<Quiz questions={questions} />} /> */}
