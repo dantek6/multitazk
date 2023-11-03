@@ -9,7 +9,9 @@ import EstadisticasPrincipal from "./components/estadisticasPrincipal";
 import Login from "./pages/loginPage";
 import Register from "./pages/registerPage";
 import Group from "./pages/groupPage";
+import GroupFormPage from "./pages/createGroupPage";
 import ProtectedRoute from "./pages/protectedRoute";
+import Task from "./pages/taskPage";
 
 import { Route, Routes } from "react-router-dom";
 //import store from "./app/store";
@@ -61,8 +63,12 @@ function App() {
 
         <Route element={<ProtectedRoute/>}>
           <Route path="/" element={<Home />} />
-          <Route path="/groups" element={<Group />} />
+          <Route path="/groups/:_id" element={<Group />} />
+          <Route path="/groups/:_id" element={<Group />} />
+          <Route path="/tasks/:_id" element={<Task />} />
+          {/* <Route path="/groups/:_id" element={<Group />} /> */}
           <Route path="/text-editor" element={<TextEditor />} />
+          <Route path="/create-group" element={<GroupFormPage />} />
         </Route>
         {/* <Route path="/quiz" element={<Quiz questions={questions} />} /> */}
       </Routes>

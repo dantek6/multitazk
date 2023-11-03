@@ -81,12 +81,12 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       try {
         const res = await verifyTokenRequest(cookies.token);
         console.log(res);
-        if (!res.data){
+        if (!res.data) {
           setIsAuthenticated(false);
           setLoading(false);
           return;
-        } 
-        
+        }
+
         setIsAuthenticated(true);
         setUser(res.data);
         setLoading(false);
